@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.text-center{
+    background-color: #e9ecef;
+    border-radius: 0;
+    font-family: sans-serif;
+    text-align: center;
+    width: 100%;
+    height: 300px;
+    font-weight: lighter;
+}
+
+.display-4 {
+    font-size: 3.5rem;
+    padding-top: 100px;
+    font-weight: lighter;
+}
+
+.lead {
+    font-size: 1.25rem;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#destination_details_form{
+    width: 800px;
+    height: auto;
+    font-size: 1.15rem;
+    margin-left: 50px;
+    margin-top: 2rem;
+    border-color: black;
+    border-style: solid;
+}
+
+.form-group {
+    margin-left: 200px;
+}
+
+label {
+    font-size: 1.25rem;
+
+}
+
+
+#name, #location, #photo {
+    margin-top: .5rem;
+    display: flex;
+    width: 12rem;
+    height: 2rem;
+    font-size: 1rem;
+}
+
+#description {
+    margin-top: .5rem;
+    display: flex;
+    width: 12rem;
+    height: 4rem;
+    font-size: 1rem;
+}
+
+.submit_btn {
+    color: white;
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 10%;
+    display: inline-block;
+    text-align: center;
+    padding: 1rem;
+    margin-top: .5rem;
+    margin-left: 200px;
+    width: 12rem;
+    height: 4rem;
+    font-size: 1rem;
+}
+
+.col-md-9 {
+    text-align: center;
+    width: 50%;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    border-color: black;
+    border-style: solid;
+}
+
+#destinations_container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 50%;
+}
+
+.card:first-child {
+    margin-left: 5rem;
+}
+.card {
+    border: 1px solid black;
+}
+
+.card-subtitle {
+    color: grey;
+}
+
+.card-body{
+    text-align: left;
+    margin-left: .5rem;
+}
+
+.btn-edit {
+    border-radius: 10%;
+    background-color: gold;
+    margin-left: .5rem;
+    width: 3rem;
+    height: 2rem;
+    font-size: 1rem;
+}
+
+.btn-remove{
+    border-radius: 10%;
+    color: white;
+    background-color: red;
+    margin-left: 4rem;
+    width: 5rem;
+    height: 2rem;
+    font-size: 1rem;
+}
+

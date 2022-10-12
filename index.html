@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacation Destinations WishList</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container text-center">
+        <h1 class="display-4">Vacation Destinations WishList</h1>
+        <p class="lead">Found exciting places to visit on your next vacation? Use the form below to add them to
+            your wishlist</p>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <form id="destination_details_form">
+                <div class="form-group">
+                    <label for="name">Destination</label>
+                    <input required minlength="2" type="text" class="form-control" id="name"
+                           placeholder="Enter the name of the destination">
+                </div>
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input required minlength="2" type="text" class="form-control" id="location"
+                           placeholder="Where is it located?">
+                </div>
+                <div class="form-group">
+                    <label for="photo">Photo</label>
+                    <input type="url" class="form-control" id="photo" placeholder="Enter an image url of the place">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea type="text" class="form-control" id="description"
+                              placeholder="Where is it located?"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary submit_btn">Add to list</button>
+            </form>
+
+        </div>
+        <div class="col-md-9">
+            <h4 id="title">Enter destination details</h4>
+            <div id="destinations_container">
+                <!-- Dynamically populated by Javascript -->
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Our Javascript -->
+<script src="app.js"></script>
+</body>
+
+</html>
