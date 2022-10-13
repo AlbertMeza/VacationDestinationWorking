@@ -1,11 +1,11 @@
 // Listen to the form being submitted
 document
     .querySelector("#destination_details_form")
-    .addEventListener("submit", handleFormSubmit);
+    .addEventListener("submit", handleFormSubmit, loadImage)
+
 
 for(let i = 0; i < localStorage.length; i++){
     let tempInfo = localStorage.getItem(localStorage.key(i))
-    console.log(tempInfo)
     let info = JSON.parse(tempInfo)
     let tempCard = createDestinationCard(info[0], info[1], info[2], info[3])
     document
@@ -140,17 +140,34 @@ function editDestination(event) {
     const newSubtitle = window.prompt("Enter new location");
     const newPhotoUrl = window.prompt("Enter new photo url");
 
+
+    let tempInfo = localStorage.getItem(title.innerText)
+    let info = JSON.parse(tempInfo)
+    let localTitle = info[0];
+    let localSub = info[1];
+    let localURL = info[2];
+    const localDesc = info[3];
+
+
+
     if (newTitle.length > 0) {
+        localStorage.removeItem(title.innerText)
         title.innerText = newTitle;
+        localTitle = newTitle;
     }
 
     if (newSubtitle.length > 0) {
         subTitle.innerText = newSubtitle;
+        localSub = newSubtitle;
     }
 
     if (newPhotoUrl.length > 0) {
         photoUrl.setAttribute("src", newPhotoUrl);
+        localURL = photoUrl;
     }
+
+    localStorage.setItem(localTitle, JSON.stringify([localTitle, localSub, localURL, localDesc]))
+
 }
 
 function removeDestination(event) {
@@ -163,3 +180,27 @@ function removeDestination(event) {
 
     card.remove();
 }
+
+function loadImage() {
+    const url = "https://api.unsplash.com/search/photos?query=coffee&per_page=20&client_id=gK52De2Tm_dL5o1IXKa9FROBAJ-LIYqR41xBdlg3X2k";
+    const imageDiv = document.querySelector('.image');
+    fetch(url)
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+
+            for (let i = 0; i < data.results.length; i++) {
+
+                /* Fetch only image that you want by using id. Example : https://unsplash.com/photos/6VhPY27jdps, id = '6VhPY27jdps'   */
+                if (data.results[i].id == "6VhPY27jdps") {
+                    let imageElement = document.createElement('img');
+                    imageElement.src = data.results[i].urls.thumb;
+                    imageDiv.append(imageElement);
+                }
+            }
+        });
+}
+
+
+
